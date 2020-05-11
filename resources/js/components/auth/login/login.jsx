@@ -5,7 +5,7 @@ import {Button, Form} from "react-bootstrap";
 import {useState} from "react";
 import {mergeObject} from "../../../utilsF";
 import {useCallback} from "react";
-import {api_v1} from "../../../routes";
+
 import {Link} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {userActions} from "../../../redux/user/userActions";

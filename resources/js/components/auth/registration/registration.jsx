@@ -26,7 +26,6 @@ export const Registration = () => {
             history.push('/login')
         })
             .catch(e => {
-                alert(e)
             })
     }, [submitData]);
 
