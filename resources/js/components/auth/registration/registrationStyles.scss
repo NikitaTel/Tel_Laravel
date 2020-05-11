@@ -1,0 +1,21 @@
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .wrapper_form {
+        padding: 20px;
+        box-sizing: border-box;
+        width: 700px;
+    }
+
+    .alert {
+        padding: 0 !important;
+    }
+}
+
+
+

@@ -1,0 +1,29 @@
+.userPromo_container {
+    width: 430px;
+    padding:10px;
+    display:flex;
+    flex-direction:row;
+    background: white;
+    border-radius:6px;
+    justify-content:space-between;
+    margin-top:15px;
+    border:1px solid #d1d2d5;
+    .user_data{
+        display:flex;
+        flex-direction:row;
+
+        .user_description{
+            padding-left:5px;
+            display:flex;
+            flex-direction:column;
+            .first_name{
+                font-weight:bolder;
+            }
+            .description{
+                padding-top:3px;
+                color:gray;
+            }
+        }
+    }
+
+}

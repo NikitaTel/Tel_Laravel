@@ -1,0 +1,10 @@
+.root_wrapper{
+    width:100%;
+    display:flex;
+    .Polaris-Button{
+        min-height:0px;
+    }
+    .Polaris-Button__Content {
+        font-size: 1rem !important;
+    }
+}
