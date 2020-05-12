@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\api;
 
+use App\Chat;
 use App\Http\Controllers\Controller;
 use App\User;
 
@@ -41,10 +42,7 @@ class UserController extends Controller
     }
 
     public function destroy($id){
-       $user=User::find($id);
-       $user->messages()->delete();
-       $user->chats()->delete();
-       $user->posts()->delete();
-       $user->delete();
+
+      User::all()->find($id)->delete();
     }
 }

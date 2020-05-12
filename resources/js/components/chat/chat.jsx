@@ -43,8 +43,10 @@ export const Chat = () => {
 
 
     useEffect(() => {
+        console.log(window.Echo);
         window.Echo.channel(`chat.${chatId.id}`)
             .listen('SentMessageEvent', (e) => {
+                console.log(e);
                 dispatch(chatActions.addChatMessage(e.message))
 
             });

@@ -26,7 +26,7 @@ class ChatController extends Controller
         $newChat=Chat::create($request->all());
 //        $newChat->avatar=$path;
         $newChat->users()->attach(explode(',',$request->users));
-         $newChat->load('users');;
+         $newChat->load('users');
 
          return $newChat;
 
@@ -54,10 +54,7 @@ class ChatController extends Controller
 
 
     public function destroy($id){
-        $chat=Chat::find($id);
-        $chat->messages()->delete();
-        $chat->users()->delete();
-
+        $chat=Chat::all()->find($id);
         $chat->delete();
     }
 

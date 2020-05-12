@@ -17,9 +17,8 @@ class UserChats extends Migration
             $table->id();
             $table->integer('user_id')->unsigned();
             $table->integer('chat_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('chat_id')->references('id')->on('chats');
-
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('chat_id')->references('id')->on('chats')->onDelete('cascade');
         });
     }
 

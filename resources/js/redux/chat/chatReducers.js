@@ -18,6 +18,4 @@ export const chatReducers=combineReducers({
         .handleAction(chatActions.addChatMessage,(state,action)=>state.id===action.payload.chat_id?{...state,messages:[...state.messages,action.payload]}:state)
         // .handleAction(chatActions.filterChatFromUser_id,(state,action)=>state.users.map(user=>user.id===action.payload.user_id&&state.users.push(action.payload.user)))
 
-
 });
-

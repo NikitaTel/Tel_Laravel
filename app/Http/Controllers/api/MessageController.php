@@ -22,7 +22,7 @@ class MessageController extends Controller
         $msg['username']=$user->firstName;
             $msg['user_avatar']=$user->avatar;
             $message= Message::create($msg);
-        \App\Events\sentMessageEvent::dispatch($message);
+        \App\Events\SentMessageEvent::dispatch($message);
 
 
 

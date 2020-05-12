@@ -17,7 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
 Route::post('registration','api\AuthController@register');
 Route::post('authentification','api\AuthController@login');
 
@@ -28,7 +27,7 @@ Route::get('posts','api\PostController@index');
 Route::post('create_post','api\PostController@store');
 Route::delete('delete_chat/{id}','api\ChatController@destroy');
 
-Route::post('createChat','api\ChatController@store');
+Route::post('createChat','api\ChatController@store');//
 Route::get('allChatList','api\ChatController@index');
 Route::get('chats_from_userid/{user_id}','api\ChatController@chatsByUserId');
 Route::get('chat/{id}','api\ChatController@show');
