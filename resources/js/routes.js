@@ -16,5 +16,6 @@ export const api_v1={
     entryIntoChat:'http://127.0.0.1:8000/api/entryIntoChat',
     deleteChat:'http://127.0.0.1:8000/api/delete_chat',
     deleteUser:'http://127.0.0.1:8000/api/delete_user',
-    allChatList:'http://127.0.0.1:8000/api/allChatList'
+    allChatList:'http://127.0.0.1:8000/api/allChatList',
+    deletePost:'http://127.0.0.1:8000/api/post_delete'
 };

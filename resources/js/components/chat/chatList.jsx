@@ -60,11 +60,13 @@ export const ChatList= ()=>{
     const createChat=useCallback(()=>{
         axios.post(`${api_v1.createChat}`,chatFormData,{headers:{
                 "Content-Type":"multipart/form-data"
-            }}).then(res=>res.status===200
+            }}).then(res=>res.status===201?
+                dispatch(chatActions.createChat.success(res.data)):
+                    dispatch(chatActions.createChat.failure())
         )
     },[chatData,chatFormData]);
 
-
+        console.log(chats,'chats')
     return(
         <div className={'chat_list_container'}>
             <div className={'create_chat_form'}>
@@ -114,7 +116,6 @@ export const ChatList= ()=>{
                             <DropZone.FileUpload  />
                         </DropZone>
                     </div>
-
 
             </div>
 

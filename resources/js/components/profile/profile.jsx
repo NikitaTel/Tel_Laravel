@@ -348,7 +348,7 @@ export const Profile = () => {
                                 <div className={'no_posts'}>У этого пользователя всё еще нет постов</div>:
                                 <div>
                                     {user.posts?.map(post =>
-                                        <Toast key={post.id}>
+                                        <Toast key={post.id} onClose={()=>user.id===userId.user.id&&dispatch(postActions.deletePost.request(post.id))}>
                                             <Toast.Header>
                                                 <img src={`http://127.0.0.1:8000/storage/${userData.avatar}`}
                                                      style={{width:'20px',height:'20px',borderRadius:'50%'}} />

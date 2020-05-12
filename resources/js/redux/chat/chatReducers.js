@@ -10,8 +10,9 @@ export const chatReducers=combineReducers({
         .handleAction(chatActions.allChatList.success,(state,action)=>action.payload)
         .handleAction(chatActions.removeChat.request,(state,action)=>state.filter(chat=>chat.id!==action.payload)),
    fetchChatsByUser_id:createReducer([])
-       .handleAction(chatActions.chatsByUser_Id.success,(state,action)=>action.payload),
-
+       .handleAction(chatActions.chatsByUser_Id.success,(state,action)=>action.payload)
+        .handleAction(chatActions.removeChat.request,(state,action)=>state.filter(chat=>chat.id!==action.payload))
+       .handleAction(chatActions.createChat.success,(state,action)=>{return [...state,action.payload]}),
        // .handleAction(chatActions.filterChatByUser_idFromName,(state,action)=> state.filter(chat=>chat.name.includes(action.payload))),
     fetchChat:createReducer(fetchChatData)
         .handleAction(chatActions.fetchChat.success,(state,action)=>action.payload)

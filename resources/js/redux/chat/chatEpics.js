@@ -7,16 +7,16 @@ import { filter, map, mergeMap} from "rxjs/operators";
 
 
 
-
-export const createChatEpic=(action$)=>action$.pipe(
-    filter(isActionOf(chatActions.createChat.request)),
-    mergeMap(action=>ajax.post(api_v1.createChat,action.payload)),
-    map(res=>res.status===200?
-        chatActions.createChat.success(res.status):
-        chatActions.createChat.failure()
-    )
-
-);
+//
+// export const createChatEpic=(action$)=>action$.pipe(
+//     filter(isActionOf(chatActions.createChat.request)),
+//     mergeMap(action=>ajax.post(api_v1.createChat,action.payload)),
+//     map(res=>res.status===201?
+//         chatActions.createChat.success(res.response):
+//         chatActions.createChat.failure()
+//     )
+//
+// );
 
 export const fetchAllChats=(action$)=>action$.pipe(
   filter(isActionOf(chatActions.allChatList.request)),
@@ -72,7 +72,6 @@ export const addMessage=(action$)=>action$.pipe(
 // );
 
 export const chatEpic=combineEpics(
-    createChatEpic,
     fetchChatByUser_id,
     fetchChat,
     addMessage,
