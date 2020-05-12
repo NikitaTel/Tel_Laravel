@@ -24,7 +24,7 @@ Route::post('authentification','api\AuthController@login');
 Route::post('message', 'api\ChatController@index');
 
 Route::get('posts','api\PostController@index');
-
+Route::delete('post_delete/{id}','api\PostController@delete');
 Route::post('create_post','api\PostController@store');
 Route::delete('delete_chat/{id}','api\ChatController@destroy');
 

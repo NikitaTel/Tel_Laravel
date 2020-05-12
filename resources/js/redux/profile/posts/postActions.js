@@ -10,5 +10,10 @@ export const postActions={
       '@POSTS/ALL_POSTS_REQUEST',
       '@POSTS/ALL_POSTS_SUCCESS',
       '@POSTS/ALL_POSTS_FAILURE'
-  )()
+  )(),
+    deletePost:createAsyncAction(
+        '@POSTS/DELETE_POST_REQUEST',
+        '@POSTS/DELETE_POST_SUCCESS',
+        '@POSTS/DELETE_POST_FAILURE',
+    )()
 };

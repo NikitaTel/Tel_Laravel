@@ -21,7 +21,6 @@ class UserController extends Controller
     {
         return User::find($id)->load('chats', 'posts');
     }
-
     public function updateUserAvatar($id, Request $request)
     {
         $user = User::find($id);
@@ -30,21 +29,13 @@ class UserController extends Controller
         $user->avatar = $path;
         $user->save();
         return $path;
-
     }
-
     public function update($id, Request $request)
     {
         User::find($id)->update($request->all());
-
         return $request->all();
     }
-
     public function destroy($id){
-       $user=User::find($id);
-       $user->messages()->delete();
-       $user->chats()->delete();
-       $user->posts()->delete();
-       $user->delete();
+      $user=User::all()->find($id);
     }
 }

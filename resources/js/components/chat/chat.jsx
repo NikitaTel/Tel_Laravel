@@ -11,7 +11,7 @@ import './chatStyles.scss'
 import {useMemo} from "react";
 import {Modal} from "react-bootstrap";
 import {Link} from "react-router-dom";
-
+import Echo from 'laravel-echo'
 
 
 export const Chat = () => {
